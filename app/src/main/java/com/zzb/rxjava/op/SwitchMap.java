@@ -13,6 +13,8 @@ import io.reactivex.subjects.PublishSubject;
 /**
  * 只接收最后一个触发的响应，
  * 比如短时间之内有两个搜索，ab, abc, 那如果触发abc搜索的时候，ab还没响应，那么就算之后ab的响应来了也不会accept，直接等abc的响应
+ * Returns a new Observable by applying a function that you supply to each item emitted by the source Observable that returns an Observable,
+ * and then emitting the items emitted by the most recently emitted of these Observables.
  * Created by ZZB on 2017/12/25.
  */
 
