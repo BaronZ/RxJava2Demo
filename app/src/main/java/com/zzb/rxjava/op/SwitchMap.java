@@ -33,12 +33,15 @@ public class SwitchMap {
             }
         });
     }
+
     private int counter;
+
     public void query() {
         String query = "" + counter++;
         Log.d(TAG, "startQuery:" + query);
         mPublishSubject.onNext(query);
     }
+
     //假的服务器请求
     private Observable<String> fakeServerQuery(String query) {
         return Observable.just(query).delay(2, TimeUnit.SECONDS);
