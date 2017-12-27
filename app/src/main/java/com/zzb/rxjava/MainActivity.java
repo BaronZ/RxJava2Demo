@@ -7,6 +7,7 @@ import android.view.View;
 import com.zzb.rxjava.op.DebounceOp;
 import com.zzb.rxjava.op.DistinctUntilChangedOp;
 import com.zzb.rxjava.op.SwitchMap;
+import com.zzb.rxjava.subject.AsyncSubjectDemo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,13 +18,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //new ThrottleOp().start();
-        //mDebounceOp = new DebounceOp();
-        //mDistinctUntilChangedOp = new DistinctUntilChangedOp();
-        mSwitchMap = new SwitchMap();
+
     }
 
     public void onClick(View view) {
-        mSwitchMap.query();
+        new AsyncSubjectDemo().test();
     }
 }
