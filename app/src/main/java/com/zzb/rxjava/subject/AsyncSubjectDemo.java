@@ -7,6 +7,7 @@ import io.reactivex.subjects.AsyncSubject;
 
 /**
  * 只发射最后一个值，不管前面发了多少个值，且监听者也只收到最后一个发射的值，onComplete之前还是之后监听
+ * 调用了onComplete之后，监听者才能收到accept
  * Created by ZZB on 2017/12/27.
  */
 
@@ -25,6 +26,10 @@ public class AsyncSubjectDemo {
         mAsyncSubject.onComplete();
         mAsyncSubject.subscribe(getConsumer("C"));// receive 4
         mAsyncSubject.subscribe(getConsumer("D"));// receive 4
+        mAsyncSubject = AsyncSubject.create();
+        mAsyncSubject.subscribe(getConsumer("E")); //如果下面没有onNext("5")， 收不到上面的4
+        mAsyncSubject.onNext("5");
+        mAsyncSubject.onComplete();
     }
 
     private Consumer<String> getConsumer(String prefix) {

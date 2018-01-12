@@ -8,6 +8,7 @@ import com.zzb.rxjava.op.DebounceOp;
 import com.zzb.rxjava.op.DistinctUntilChangedOp;
 import com.zzb.rxjava.op.SwitchMap;
 import com.zzb.rxjava.subject.AsyncSubjectDemo;
+import com.zzb.rxjava.subject.BehaviorSubjectDemo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +23,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        new AsyncSubjectDemo().test();
+        new BehaviorSubjectDemo().test();
     }
 }
