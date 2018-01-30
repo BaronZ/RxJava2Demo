@@ -26,6 +26,12 @@ public class BehaviorSubjectDemo {
         source.onNext("3");
         source.onNext("4");
         source.onNext("5");
-
+        source.subscribe(new Consumer<String>() {
+            @Override
+            public void accept(String s) throws Exception {
+                Log.d("zzb1", "accept2: " + s);
+            }
+        });
+        source.onNext("6");
     }
 }
